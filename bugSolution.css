@@ -1,0 +1,21 @@
+To avoid inconsistencies, try to use consistent units within the `calc()` function. If you need to mix units, ensure the parent container has explicitly defined dimensions to avoid ambiguity.
+
+Here's a revised CSS rule that uses consistent units:
+```css
+#myElement {
+  width: calc(50% - 10px);
+}
+```
+
+**Better approach (using only percentages):** 
+It's often better to stick to a single unit type.  For example, if you need a width that's 50% minus 10 pixels, you can try to approximate the 10 pixels as a percentage.  Determine the container width and calculate the percentage equivalent of 10 pixels relative to that width. 
+
+This makes the calculation more reliable and avoids browser-specific inconsistencies.
+
+```css
+/* Assuming a container width of 500px, 10px is approximately 2% */
+#myElement {
+  width: calc(50% - 2%);
+}
+```
+Note that this approach requires that the parent container has a reliable and consistent width.
